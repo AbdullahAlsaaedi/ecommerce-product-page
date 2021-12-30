@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  // justify-content: space-between;
+  padding: 5rem;
+  padding-right: 3vw;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: solid 0.5px var(--color-natural-Grayish-blue);
+  // margin: 0 10rem;
+}
+
+.product {
+  //   flex: 1;
+  margin-right: 7vw;
+}
+
+.details {
+  //   flex: 1;
+}
