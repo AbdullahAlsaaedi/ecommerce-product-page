@@ -4,6 +4,10 @@
 
 .heading-2 {
   font-size: 4rem;
+
+  @media screen and (max-width: $bp-small-2) {
+    font-size: 3rem;
+  }
 }
 
 .paragraph {

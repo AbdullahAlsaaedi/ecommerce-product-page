@@ -23,6 +23,10 @@
 
   <body>
     <header class="header">
+      <div class="menu">
+        <img src="/images/icon-menu.svg" alt="" class="menu__icon" />
+      </div>
+
       <h1 class="heading-1 header__heading" alt="img">
         <img src="/images/logo.svg" alt="" />
       </h1>
@@ -107,11 +111,14 @@
         <div class="details__previous-price paragraph">$250.00</div>
 
         <form action="#" class="details__form">
-          <div class="details__amount">
-            <input type="number" />
+          <div class="quantity">
+            <button class="quantity__substract">-</button>
+            <input class="quantity__number" type="number" value="0" />
+            <button type="quantity__add">+</button>
           </div>
           <button class="details__btn">
-            <img src="/images/icon-cart.svg" alt="" />
+            <div class="details__icon"></div>
+
             <span>Add to cart</span>
           </button>
         </form>

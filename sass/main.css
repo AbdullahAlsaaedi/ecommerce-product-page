@@ -26,10 +26,34 @@ html {
           box-sizing: border-box;
 }
 
+@media screen and (max-width: 71.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  html {
+    font-size: 45%;
+  }
+}
+
 body {
   font-family: "Kumbh Sans", sans-serif;
   font-size: 1.6rem;
   padding: 0 10.5vw;
+}
+
+@media screen and (max-width: 57.5em) {
+  body {
+    padding: 0 5vw;
+  }
+}
+
+@media screen and (max-width: 33em) {
+  body {
+    padding: 0;
+  }
 }
 
 .main {
@@ -38,6 +62,23 @@ body {
   display: flex;
   padding: 5rem;
   padding-right: 3vw;
+}
+
+@media screen and (max-width: 33em) {
+  .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 44em) {
+  .main {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .header {
@@ -51,8 +92,20 @@ body {
   border-bottom: solid 0.5px var(--color-natural-Grayish-blue);
 }
 
+@media screen and (max-width: 33em) {
+  .header {
+    padding: 2.5rem;
+  }
+}
+
 .product {
   margin-right: 7vw;
+}
+
+@media screen and (max-width: 33em) {
+  .product {
+    margin-right: 0;
+  }
 }
 
 .heading-3 {
@@ -61,6 +114,12 @@ body {
 
 .heading-2 {
   font-size: 4rem;
+}
+
+@media screen and (max-width: 40em) {
+  .heading-2 {
+    font-size: 3rem;
+  }
 }
 
 .paragraph {
@@ -76,6 +135,24 @@ body {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+}
+
+.menu {
+  display: none;
+  margin-right: 2rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 33em) {
+  .menu {
+    display: initial;
+  }
 }
 
 .nav {
@@ -104,12 +181,24 @@ body {
   font-size: 1.3rem;
 }
 
+@media screen and (max-width: 40em) {
+  .nav__list {
+    margin-left: 2.5rem;
+  }
+}
+
 .nav__item {
   cursor: pointer;
 }
 
 .nav__item:not(:last-child) {
   margin-right: 3rem;
+}
+
+@media screen and (max-width: 40em) {
+  .nav__item:not(:last-child) {
+    margin-right: 1.5rem;
+  }
 }
 
 .nav__cart-icon {
@@ -140,11 +229,25 @@ body {
 .product img {
   display: block;
   border-radius: 10px;
+  height: 100%;
   width: 100%;
+}
+
+@media screen and (max-width: 33em) {
+  .product img {
+    border-radius: 0;
+  }
 }
 
 .product__active {
   width: 100%;
+}
+
+@media screen and (max-width: 33em) {
+  .product__active {
+    height: 30rem;
+    min-width: 100vw;
+  }
 }
 
 .product__thumbnails {
@@ -155,10 +258,43 @@ body {
   gap: 2rem;
 }
 
+@media screen and (max-width: 33em) {
+  .product__thumbnails {
+    min-width: 100%;
+    height: 30rem;
+    gap: 0;
+  }
+}
+
 .product__thumbnail {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+@media screen and (max-width: 33em) {
+  .product__thumbnail {
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .product {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30rem;
+            flex: 0 0 30rem;
+  }
+}
+
+@media screen and (max-width: 33em) {
+  .product {
+    gap: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    overflow: auto;
+  }
 }
 
 .details {
@@ -214,5 +350,137 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 40em) {
+  .details__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.details__btn {
+  background-color: var(--color-primary-Orange);
+  color: var(--color-natural-Light-grayish-blue);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  border-radius: 10px;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.3rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 53%;
+          flex: 0 0 53%;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 44em) {
+  .details__btn {
+    padding: 1rem;
+  }
+}
+
+.details__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-natural-White);
+  -webkit-mask-image: url(/images/shopping-cart-1985.svg);
+          mask-image: url(/images/shopping-cart-1985.svg);
+  -webkit-mask-size: cover;
+          mask-size: cover;
+}
+
+@media screen and (max-width: 50em) {
+  .details {
+    margin-top: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 33em) {
+  .details {
+    margin: 2rem;
+  }
+}
+
+.quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quantity > * {
+  width: 4rem;
+  height: 4.5rem;
+  border: none;
+  background-color: var(--color-natural-Light-grayish-blue);
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 44em) {
+  .quantity > * {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+.quantity button {
+  color: var(--color-primary-Orange);
+  padding: 1.5rem;
+  font-size: 2rem;
+}
+
+.quantity button:nth-child(1) {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.quantity button:nth-child(3) {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.quantity input {
+  color: var(--color-natural-Black);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.quantity input::-webkit-outer-spin-button, .quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+
+.quantity input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.quantity input:focus {
+  outline: none;
 }
 /*# sourceMappingURL=main.css.map */

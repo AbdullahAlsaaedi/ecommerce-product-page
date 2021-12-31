@@ -13,6 +13,13 @@
   ); // (with 75% opacity for lightbox background)
 }
 
+$bp-largest: 71.25em;
+$bp-large: 57.5em;
+$bp-medium: 50em;
+$bp-small-1: 44em;
+$bp-small-2: 40em;
+$bp-small: 33em;
+
 * {
   padding: 0;
   margin: 0;
@@ -22,10 +29,24 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  @media screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+  @media screen and (max-width: $bp-small-2) {
+    font-size: 45%;
+  }
 }
 
 body {
   font-family: "Kumbh Sans", sans-serif;
   font-size: 1.6rem;
   padding: 0 10.5vw;
+
+  @media screen and (max-width: $bp-large) {
+    padding: 0 5vw;
+  }
+
+  @media screen and (max-width: $bp-small) {
+    padding: 0;
+  }
 }
