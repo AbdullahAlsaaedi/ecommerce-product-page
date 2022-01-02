@@ -50,7 +50,7 @@ body {
   }
 }
 
-@media screen and (max-width: 33em) {
+@media screen and (max-width: 28em) {
   body {
     padding: 0;
   }
@@ -64,7 +64,7 @@ body {
   padding-right: 3vw;
 }
 
-@media screen and (max-width: 33em) {
+@media screen and (max-width: 28em) {
   .main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -92,7 +92,7 @@ body {
   border-bottom: solid 0.5px var(--color-natural-Grayish-blue);
 }
 
-@media screen and (max-width: 33em) {
+@media screen and (max-width: 28em) {
   .header {
     padding: 2.5rem;
   }
@@ -102,7 +102,7 @@ body {
   margin-right: 7vw;
 }
 
-@media screen and (max-width: 33em) {
+@media screen and (max-width: 28em) {
   .product {
     margin-right: 0;
   }
@@ -137,21 +137,15 @@ body {
   cursor: pointer;
 }
 
-.menu {
-  display: none;
-  margin-right: 2rem;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+@media screen and (max-width: 28em) {
+  .header__heading img {
+    width: 13rem;
+  }
 }
 
-@media screen and (max-width: 33em) {
-  .menu {
-    display: initial;
+@media screen and (min-width: 40em) {
+  .menu img {
+    display: none;
   }
 }
 
@@ -183,7 +177,7 @@ body {
 
 @media screen and (max-width: 40em) {
   .nav__list {
-    margin-left: 2.5rem;
+    margin-left: 0;
   }
 }
 
@@ -197,7 +191,13 @@ body {
 
 @media screen and (max-width: 40em) {
   .nav__item:not(:last-child) {
-    margin-right: 1.5rem;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .nav__item {
+    display: none;
   }
 }
 
@@ -205,11 +205,68 @@ body {
   cursor: pointer;
 }
 
+@media screen and (max-width: 40em) {
+  .nav__cart-icon {
+    margin-left: auto;
+  }
+}
+
 .nav__user-img {
   width: 4rem;
   margin-left: 3rem;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.responsive-list {
+  position: absolute;
+  height: 100vh;
+  width: 40%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-natural-White);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-natural-Black);
+  gap: 2rem;
+  padding-top: 10rem;
+  padding-left: 3rem;
+}
+
+@media screen and (max-width: 40em) {
+  .responsive-list li {
+    display: block;
+  }
+}
+
+.menu {
+  display: none;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 40em) {
+  .menu {
+    display: block;
+  }
+}
+
+.close {
+  display: none;
+}
+
+.close {
+  z-index: 10;
 }
 
 .product {
@@ -233,7 +290,7 @@ body {
   width: 100%;
 }
 
-@media screen and (max-width: 33em) {
+@media screen and (max-width: 28em) {
   .product img {
     border-radius: 0;
   }
@@ -243,9 +300,9 @@ body {
   width: 100%;
 }
 
-@media screen and (max-width: 33em) {
+@media screen and (max-width: 28em) {
   .product__active {
-    height: 30rem;
+    height: 40rem;
     min-width: 100vw;
   }
 }
@@ -258,7 +315,7 @@ body {
   gap: 2rem;
 }
 
-@media screen and (max-width: 33em) {
+@media screen and (max-width: 28em) {
   .product__thumbnails {
     min-width: 100%;
     height: 30rem;
@@ -272,7 +329,7 @@ body {
           flex: 1;
 }
 
-@media screen and (max-width: 33em) {
+@media screen and (max-width: 28em) {
   .product__thumbnail {
     min-width: 100%;
   }
@@ -281,12 +338,12 @@ body {
 @media screen and (max-width: 50em) {
   .product {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 30rem;
-            flex: 0 0 30rem;
+        -ms-flex: 0 0 40rem;
+            flex: 0 0 40rem;
   }
 }
 
-@media screen and (max-width: 33em) {
+@media screen and (max-width: 28em) {
   .product {
     gap: 0;
     -webkit-box-orient: horizontal;
@@ -407,7 +464,7 @@ body {
   }
 }
 
-@media screen and (max-width: 33em) {
+@media screen and (max-width: 28em) {
   .details {
     margin: 2rem;
   }
