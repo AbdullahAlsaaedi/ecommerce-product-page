@@ -26,7 +26,7 @@
       <div class="menu">
         <img src="/images/icon-menu.svg" alt="" class="menu__icon" />
       </div>
-      <div class="close">
+      <div class="close hidden">
         <img src="/images/icon-close.svg" alt="" class="close__icon" />
       </div>
 
@@ -55,7 +55,10 @@
 
     <main class="main">
       <div class="product">
-        <div class="product__active">
+        <button class="swipe-btn product__swipeleft">&lt;</button>
+        <button class="swipe-btn product__swiperight">&gt;</button>
+
+        <div class="product__img product__img--active">
           <img
             src="/images/image-product-1.jpg"
             alt=""
@@ -63,33 +66,78 @@
           />
         </div>
 
-        <div class="product__thumbnails">
-          <div class="product__thumbnail">
+        <div
+          class="product__img product__img--thumbnail product__img--thumbnail-1"
+        >
+          <img
+            src="/images/image-product-1.jpg"
+            alt=""
+            class="product__thumbnail-img product__thumbnail-img-1"
+          />
+        </div>
+        <div class="product__img product__img--thumbnail">
+          <img
+            src="/images/image-product-2.jpg"
+            alt=""
+            class="product__thumbnail-img product__thumbnail-img-1"
+          />
+        </div>
+        <div class="product__img product__img--thumbnail">
+          <img
+            src="/images/image-product-3.jpg"
+            alt=""
+            class="product__thumbnail-img product__thumbnail-img-1"
+          />
+        </div>
+        <div class="product__img product__img--thumbnail">
+          <img
+            src="/images/image-product-4.jpg"
+            alt=""
+            class="product__thumbnail-img product__thumbnail-img-1"
+          />
+        </div>
+
+        <div class="product__modals hidden">
+          <button class="product__modals-close">X</button>
+          <button class="swipe-btn product__modals-swipeleft">&lt;</button>
+          <button class="swipe-btn product__modals-swiperight">&gt;</button>
+          <div class="product__modal product__modal--active">
             <img
               src="/images/image-product-1.jpg"
               alt=""
-              class="product__thumbnail-img product__thumbnail-img-1"
+              class="product__modal-img product__modalimg--active"
             />
           </div>
-          <div class="product__thumbnail">
+
+          <div class="product__modal">
+            <img
+              src="/images/image-product-1.jpg"
+              alt=""
+              class="product__modal-img product__modalimg--thumbnail"
+            />
+          </div>
+
+          <div class="product__modal">
             <img
               src="/images/image-product-2.jpg"
               alt=""
-              class="product__thumbnail-img product__thumbnail-img-1"
+              class="product__modal-img product__modalimg--thumbnail"
             />
           </div>
-          <div class="product__thumbnail">
+
+          <div class="product__modal">
             <img
               src="/images/image-product-3.jpg"
               alt=""
-              class="product__thumbnail-img product__thumbnail-img-1"
+              class="product__modal-img product__modalimg--thumbnail"
             />
           </div>
-          <div class="product__thumbnail">
+
+          <div class="product__modal">
             <img
               src="/images/image-product-4.jpg"
               alt=""
-              class="product__thumbnail-img product__thumbnail-img-1"
+              class="product__modal-img product__modalimg--thumbnail"
             />
           </div>
         </div>
@@ -126,6 +174,8 @@
           </button>
         </form>
       </div>
+
+      <div class="overlay hidden"></div>
     </main>
 
     <script type="text/javascript" src="app.js"></script>

@@ -241,6 +241,7 @@ body {
   gap: 2rem;
   padding-top: 10rem;
   padding-left: 3rem;
+  z-index: 20;
 }
 
 @media screen and (max-width: 40em) {
@@ -262,95 +263,220 @@ body {
 }
 
 .close {
-  display: none;
-}
-
-.close {
   z-index: 10;
 }
 
 .product {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 37rem;
-          flex: 0 0 37rem;
+      -ms-flex: 0 0 35rem;
+          flex: 0 0 35rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 3.8fr 0.8fr;
+      grid-template-rows: 3.8fr 0.8fr;
   gap: 2rem;
 }
 
 .product img {
   display: block;
-  border-radius: 10px;
   height: 100%;
   width: 100%;
+  cursor: pointer;
+}
+
+.product__img img {
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 28em) {
-  .product img {
+  .product__img img {
     border-radius: 0;
   }
 }
 
-.product__active {
-  width: 100%;
+.product__img--active {
+  grid-column: 1 / -1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
 }
 
 @media screen and (max-width: 28em) {
-  .product__active {
-    height: 40rem;
+  .product__img--active {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+  }
+}
+
+@media screen and (max-width: 28em) {
+  .product__img--thumbnail {
     min-width: 100vw;
   }
 }
 
-.product__thumbnails {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
+@media screen and (max-width: 28em) {
+  .product__img--thumbnail-1 {
+    display: none;
+  }
+}
+
+.product__modals {
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: auto 3.8fr 0.8fr;
+      grid-template-rows: auto 3.8fr 0.8fr;
   gap: 2rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 35rem;
+  z-index: 15;
+}
+
+.product__modals-close {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / 5;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  z-index: 2;
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  color: var(--color-natural-White);
+  cursor: pointer;
+}
+
+.product__modals-swiperight {
+  position: relative;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / 5;
+  z-index: 30;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  cursor: pointer;
+}
+
+.product__modals-swipeleft {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  z-index: 30;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 28em) {
-  .product__thumbnails {
-    min-width: 100%;
-    height: 30rem;
-    gap: 0;
+  .product__modals {
+    width: 80%;
   }
 }
 
-.product__thumbnail {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+.product__modal {
+  grid-row: 3/ -1;
+}
+
+.product__modal-img {
+  border-radius: 10px;
+}
+
+.product__modal--active {
+  grid-column: 1 / -1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/ 3;
+  position: relative;
+}
+
+.product__swipeleft {
+  display: none;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  z-index: 10;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  margin-left: 2rem;
 }
 
 @media screen and (max-width: 28em) {
-  .product__thumbnail {
-    min-width: 100%;
+  .product__swipeleft {
+    display: block;
   }
 }
 
-@media screen and (max-width: 50em) {
+.product__swiperight {
+  display: none;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  z-index: 10;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 28em) {
+  .product__swiperight {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 28em) {
   .product {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 40rem;
-            flex: 0 0 40rem;
-  }
-}
-
-@media screen and (max-width: 28em) {
-  .product {
-    gap: 0;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     overflow: auto;
+  }
+}
+
+@media screen and (max-width: 28em) {
+  .product {
+    -ms-grid-columns: (100vw)[5];
+        grid-template-columns: repeat(5, 100vw);
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+    gap: 0;
   }
 }
 
@@ -539,5 +665,30 @@ body {
 
 .quantity input:focus {
   outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+
+.swipe-btn {
+  background-color: var(--color-natural-White);
+  border-radius: 50%;
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  font-family: "Kumbh Sans", sans-serif;
+  padding-bottom: 0.2rem;
 }
 /*# sourceMappingURL=main.css.map */
