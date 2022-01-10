@@ -24,7 +24,7 @@ its about a beautifully designed page that has a cart and layout functionality a
 
 ### What I learned
 
-i learned a lot of this stuff in this project, such as cart functionality, modals, and the responsiveness of the page
+i've learned a lot of stuff in this project, such as cart functionality, modals, and the responsiveness of the page
 
 ### Continued development
 
