@@ -108,17 +108,17 @@ body {
   }
 }
 
-.heading-3 {
+.heading-2 {
   font-size: 4rem;
 }
 
 @media screen and (max-width: 40em) {
-  .heading-3 {
+  .heading-2 {
     font-size: 3rem;
   }
 }
 
-.heading-2 {
+.heading-1 {
   color: var(--color-primary-Orange);
 }
 
@@ -632,12 +632,12 @@ body {
   margin-top: 5rem;
 }
 
-.details__heading-3 {
+.details__heading-2 {
   margin-bottom: 2.3rem;
   font-weight: 700;
 }
 
-.details__heading-2 {
+.details__heading-1 {
   margin-bottom: 1rem;
 }
 
