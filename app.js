@@ -22,7 +22,19 @@ const modalLswap = document.querySelector(".product__modals-swipeleft");
 const productSwipteL = document.querySelector(".product__swipeleft");
 const productSwipteR = document.querySelector(".product__swiperight");
 
+const btnSubstract = document.querySelector(".quantity__substract");
+const btnAdd = document.querySelector(".quantity__add");
+const quantity = document.querySelector(".quantity__number");
+const btnCheck = document.querySelector(".details__btn");
+const btnMenuCheckout = document.querySelector(".nav__menu-checkout");
+
 let currentModal = 1;
+
+const shoes = {
+  model: "Fall Limited Edition Sneakers",
+  price: 125,
+  quantity: 0,
+};
 
 menuEl.addEventListener("click", () => {
   list.classList.add("responsive-list");
@@ -116,4 +128,52 @@ window.addEventListener("resize", () => {
     closeEl.classList.add("hidden");
     menuEl.classList.remove("hidden");
   }
+});
+
+btnAdd.addEventListener("click", (e) => {
+  e.preventDefault();
+  quantity.value++;
+});
+
+btnSubstract.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (Number(quantity.value) !== 0) {
+    quantity.value--;
+  }
+});
+
+btnCheck.addEventListener("click", (e) => {
+  e.preventDefault();
+  shoes.quantity += Number(quantity.value);
+  console.log(shoes);
+  quantity.value = 0;
+
+  // create a new element into html !
+  document.querySelector(".nav__menu-item--empty").style.display = "none";
+  const html = `
+  <div class="nav__menu-imgbox">
+                <img
+                  class="nav__menu-img"
+                  src="images/image-product-1-thumbnail.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="nav__menu-model">${shoes.model}</p>
+              <p class="nav__menu-pricing">
+                $${shoes.price} x ${
+    shoes.quantity
+  } <span class="nav__menu-total">$${shoes.price * shoes.quantity}</span>
+              </p>
+              <button class="nav__menu-remove">
+                <img src="images/icon-delete.svg" alt="" />
+              </button>
+              <button class="nav__menu-checkout">Check out</button>
+
+  `;
+
+  document.querySelector(".nav__menu-item").innerHTML = html;
+});
+
+document.querySelector(".nav__cart-icon").addEventListener("click", () => {
+  document.querySelector(".nav__menu").classList.toggle("hidden");
 });

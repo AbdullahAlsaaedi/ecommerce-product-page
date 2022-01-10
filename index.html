@@ -44,7 +44,14 @@
           <li class="nav__item">Contact</li>
         </ul>
 
-        <img class="nav__cart-icon" src="/images/icon-cart.svg" alt="svg" />
+        <div class="nav__cart-box">
+          <img class="nav__cart-icon" src="/images/icon-cart.svg" alt="svg" />
+          <ul class="nav__menu hidden">
+            <div class="nav__menu-name">Cart</div>
+            <li class="nav__menu-item--empty">Your cart is empty.</li>
+            <li class="nav__menu-item"></li>
+          </ul>
+        </div>
         <img
           src="/images/image-avatar.jpg"
           alt="userimg"
@@ -165,7 +172,7 @@
           <div class="quantity">
             <button class="quantity__substract">-</button>
             <input class="quantity__number" type="number" value="0" />
-            <button type="quantity__add">+</button>
+            <button class="quantity__add">+</button>
           </div>
           <button class="details__btn">
             <div class="details__icon"></div>
