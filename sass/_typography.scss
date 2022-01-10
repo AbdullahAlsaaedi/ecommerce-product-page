@@ -1,13 +1,13 @@
 .heading-3 {
-  color: var(--color-primary-Orange);
-}
-
-.heading-2 {
   font-size: 4rem;
 
   @media screen and (max-width: $bp-small-2) {
     font-size: 3rem;
   }
+}
+
+.heading-2 {
+  color: var(--color-primary-Orange);
 }
 
 .paragraph {
